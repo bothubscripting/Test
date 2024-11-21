@@ -291,7 +291,7 @@ spawn(function()
     end
 end)
 spawn(function()
-    game:GetService("RunService").RenderStepped:Connect(function()
+    while wait() do
         if _G.Tp_Even then
             pcall(function()
                 Part()
@@ -303,7 +303,7 @@ spawn(function()
                 game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace:FindFirstChild("Tp_Evend").CFrame * CFrame.new(0,3.5,0)
             end)
         end
-    end)
+    end
 end)
 spawn(function()
 	while wait(600) do
@@ -320,7 +320,7 @@ spawn(function()
             for x,y in pairs(game.Workspace.world.npcs:GetChildren()) do
                 if string.find(y.Name,"Merchant") and _G.AutoSell then
                     for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
-                        if v.Name == "Depth Octopus" or v.Name == "Frilled Shark" or v.Name == "Luminescent Minnow" or v.Name == "Three-eyed Fish" or v.Name == "Black Dragon Fish" or v.Name == "Goblin Shark" or v.Name == "Spider Crab" or v.Name == "Small Spine Chimera" or v.Name == "Nautilus" or v.Name == "Ancient Eel" or v.Name == "Barreleye Fish" or v.Name == "Mutated Shark" or v.Name == "Sea Snake" and _G.AutoSell then
+                        if v.Name == "Depth Octopus" or v.Name == "Frilled Shark" or v.Name == "Luminescent Minnow" or v.Name == "Three-eyed Fish" or v.Name == "Black Dragon Fish" or v.Name == "Goblin Shark" or v.Name == "Spider Crab" or v.Name == "Small Spine Chimera" or v.Name == "Nautilus" or v.Name == "Ancient Eel" or v.Name == "Barreleye Fish" or v.Name == "Mutated Shark" or v.Name == "Sea Snake" then
                             if not v.link.Value:FindFirstChild("abyssalWeightBonus") then
                                 y.HumanoidRootPart.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(4.5,0,0)
                                 game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
