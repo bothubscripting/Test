@@ -1,0 +1,359 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/xHeptc/Kavo-UI-Library/main/source.lua"))()
+local Window = Library.CreateLib("Bot Hub", "Sentinel")
+local Tab = Window:NewTab("ฟาม")
+local Tab2 = Window:NewTab("วาปเกาะ")
+local Tab3 = Window:NewTab("ขายปลา")
+local Section = Tab:NewSection("ปลา")
+local Section2 = Tab2:NewSection("เกาะ")
+local Section5 = Tab2:NewSection("สถานที่")
+local Section3 = Tab3:NewSection("ขายสินค้า")
+local Section4 = Tab3:NewSection("ขายปลาทอง")
+local PlayerGui = game:GetService("Players").LocalPlayer.PlayerGui
+local pos = nil
+local land = {
+    "ไม้วิเนียร์",
+    "เกาะหิมะ",
+    "เกาะเทอราพิม",
+    "อ่าวRoslit",
+    "เกาะซันสโตน",
+    "รูปปั้นแห่งการปกครอง",
+    "อ่างเก็บน้ำMushgrove",
+    "ชายฝั่งที่ถูกทอดทิ้ง",
+    "ถ้ำผี"
+}
+local Pos = {
+    "ที่อัปเบ็ต",
+    "ซื้อโชค/หิน",
+    "ใต้น้ำ 1",
+    "ใต้น้ำ 2",
+    "เบ็ตใหม่",
+}
+Section:NewToggle("ออโต้ถือเบ็ต", "", function(equip)
+    if equip then
+        _G.AutoBet = true
+    else
+        _G.AutoBet = false
+    end
+end)
+Section:NewToggle("ออโต้ตกเบ็ด", "", function(bet)
+    if bet then
+        _G.Autotokbet = true
+    else
+        _G.Autotokbet = false
+    end
+end)
+Section:NewToggle("ออโต้กดบา", "", function(state)
+    if state then
+        _G.AutoBar = true
+    else
+        _G.AutoBar = false
+    end
+end)
+local Sectionc = Tab:NewSection("กล่อง")
+Sectionc:NewToggle("ออโต้เปิดกล่อง", "", function(map)
+    if map then
+        _G.AutoFram_chest = true
+    else
+        _G.AutoFram_chest = false
+    end
+end)
+
+------ Section2
+
+Section2:NewDropdown("เกาะ", "", land, function(lands)
+    pos = lands
+end)
+Section2:NewButton("วาป", "", function()
+    if pos == "ไม้วิเนียร์" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(390.13482666015625, 134.81103515625, 249.57086181640625)
+        elseif pos == "เกาะหิมะ" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(2704.310302734375, 171.7699432373047, 2380.51123046875)
+        elseif pos == "เกาะเทอราพิม" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(-191.4773406982422, 143.14602661132812, 1927.0682373046875)
+        elseif pos == "อ่าวRoslit" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(-1449.3045654296875, 143.85153198242188, 736.7460327148438)
+        elseif pos == "เกาะซันสโตน" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(-937.3826904296875, 131.59713745117188, -1106.302490234375)
+        elseif pos == "รูปปั้นแห่งการปกครอง" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(25.79960823059082, 159.01470947265625, -1037.28515625)
+        elseif pos == "อ่างเก็บน้ำMushgrove" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(2503.79736328125, 131.00001525878906, -720.7041015625)
+        elseif pos == "ชายฝั่งที่ถูกทอดทิ้ง" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(-2494.865478515625, 133.25003051757812, 1553.2960205078125)
+        elseif pos == "ถ้ำผี" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(944.7179565429688, -711.662109375, 1250.0980224609375)
+    end
+end)
+Section5:NewDropdown("ที่", "", Pos, function(landsk)
+    posi = landsk
+end)
+Section5:NewButton("วาป", "", function()
+    if posi == "ที่อัปเบ็ต" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(1311.31262, -802.427002, -83.0995331, -0.993817449, 5.91994542e-09, 0.111026496, 7.60555707e-09, 1, 1.47585508e-08, -0.111026496, 1.55117235e-08, -0.993817449)
+        elseif posi == "ซื้อโชค/หิน" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(-929.35907, 225.730988, -995.991699, 0.986797869, -8.48301873e-10, -0.161956519, 6.13367968e-10, 1, -1.5005982e-09, 0.161956519, 1.38144818e-09, 0.986797869)
+        elseif posi == "ใต้น้ำ 1" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(-106.194656, -515.299377, 1149.98315, -0.999951184, 5.82665871e-09, -0.00988326408, 5.88962701e-09, 1, -6.34209574e-09, 0.00988326408, -6.39999476e-09, -0.999951184)
+        elseif posi == "ใต้น้ำ 2" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(945.902954, -711.662109, 1257.08728, -0.0918010622, 2.65054267e-09, 0.995777369, -4.25300711e-10, 1, -2.70099099e-09, -0.995777369, -6.71458666e-10, -0.0918010622)
+        elseif posi == "เบ็ตใหม่" then
+        workspace[game.Players.LocalPlayer.Name].HumanoidRootPart.CFrame = CFrame.new(1703.48877, -902.5271, 1440.23389, -0.991736352, 2.94464204e-08, -0.128292605, 2.34133548e-08, 1, 4.85339342e-08, 0.128292605, 4.51291093e-08, -0.991736352)
+    end
+end)
+
+------ Section2
+
+
+Section3:NewToggle("ออโต้ขายปลา", "", function(Sell)
+    if Sell then
+        _G.AutoSell = true
+    else
+        _G.AutoSell = false
+    end
+end)
+Section3:NewButton("ขายปลาทั้งหมด", "กดปุ่มเพื่อขายปลาทั้งหมดในคลัง", function()
+    for i,v in pairs(game.Workspace.world.npcs:GetChildren()) do
+        if string.find(v.Name,"Merchant") then
+            v.HumanoidRootPart.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(4.5,0,0)
+            workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild(v.Name):WaitForChild("merchant"):WaitForChild("sellall"):InvokeServer()
+        end
+    end
+end)
+Section4:NewToggle("ฟามคีย์", "", function(Go)
+    if Go then
+        _G.Go = true
+    else
+        _G.Go = false
+    end
+end)
+Section4:NewToggle("ฟามอีเว้น", "", function(Go)
+    if Go then
+        _G.Tp_Even = true
+    else
+        _G.Tp_Even = false
+    end
+end)
+
+
+
+
+
+----- script
+-- function
+function checktool()
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+        if v.ClassName == "Tool" and v.ToolTip == "fisch" then
+            return v.Name
+        end
+    end
+end
+function checktools()
+    if checktool() == "" or checktool() == nil then
+        for i,v in pairs(game.Workspace[game.Players.LocalPlayer.Name]:GetChildren()) do
+            if v.ClassName == "Tool" and v.ToolTip == "fisch" then
+                return v.Name
+            end
+        end
+    else
+        return checktool()
+    end
+end
+function Part()
+    if not workspace:FindFirstChild("Tp_Even") then
+        local part = Instance.new("Part",workspace)
+        part.Anchored = true
+        part.CFrame = CFrame.new(872.113525, -740.642822, 1243.06262, 0.0225981735, -3.07806958e-09, 0.999744654, -3.43742386e-08, 1, 3.85584897e-09, -0.999744654, -3.44525972e-08, 0.0225981735)
+        part.CanCollide = true
+        part.Name = "Tp_Evend"
+        part.Size = Vector3.new(15,1,15)
+        part.Transparency = 1
+    end
+end
+
+-- bet
+function Autobet()
+    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+        if v.ClassName == "Tool" and v.ToolTip == "fisch" then
+            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+        end
+    end
+end
+spawn(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.AutoBet then
+            pcall(function()
+                Autobet()
+            end)
+        end
+    end)
+end)
+-- bar
+spawn(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.AutoBar then
+            pcall(function()
+                if PlayerGui:FindFirstChild("reel") then
+                    local args = {
+                        [1] = 100,
+                        [2] = true
+                    }
+                    game:GetService("ReplicatedStorage"):WaitForChild("events"):WaitForChild("reelfinished"):FireServer(unpack(args))
+                    PlayerGui:FindFirstChild("reel").bar.playerbar.Position = PlayerGui:FindFirstChild("reel").bar.fish.Position
+                end
+            end)
+        end
+    end)
+end)
+-- batdowe
+spawn(function()
+	game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.Autotokbet then
+            pcall(function()
+                game:GetService("Players").LocalPlayer.Character:FindFirstChild(checktools()).events.cast:FireServer(100)
+            end)
+        end
+    end)
+end)
+-- Open chest
+local part = nil
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.AutoFram_chest then
+            pcall(function()
+                for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+                    if v.Name == "Treasure Map" then
+                        game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                        if part ~= nil then
+                            if workspace.world.chests:FindFirstChild(part) then
+                                if string.find(game:GetService("Players").LocalPlayer.PlayerGui["Treasure Map"].Main.CoordinatesLabel.Text,tostring("X "..math.round(workspace.world.chests:FindFirstChild(part).Position.X))) then
+                                    if not workspace.world.chests[part]:FindFirstChild("ProximityPrompt") then
+                                        wait(0.1)
+                                        v:Destroy()
+                                    end
+                                end
+                            end
+                        end
+                    end
+                end
+                for x,y in pairs(game.Workspace.world.chests:GetChildren()) do
+                    if string.find(y.Name, "TreasureChest") then
+                        game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = y.CFrame * CFrame.new(0,0,4)
+                        game:GetService("VirtualInputManager"):SendKeyEvent(true,"E",false,game)
+                        part = y.Name
+                        if not y:FindFirstChild("ProximityPrompt") then
+                            y:Destroy()
+                            game:GetService("VirtualInputManager"):SendKeyEvent(false,"E",false,game)
+                        end
+                        return part
+                    end
+                end
+            end)
+        end
+    end)
+end)
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.AutoFram_chest then
+            pcall(function()
+                for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+                    if v.Name == "Treasure Map" then
+                        for x,y in pairs(game.Workspace.world.chests:GetChildren()) do
+                            game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                        end
+                        if string.find(game:GetService("Players").LocalPlayer.PlayerGui["Treasure Map"].Main.CoordinatesLabel.Text,"?") then
+                            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").Map.MysticIsland:FindFirstChildOfClass("MeshPart").CFrame
+                            workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild("Jack Marrow"):WaitForChild("treasure"):WaitForChild("repairmap"):InvokeServer()
+                        end
+                    end
+                end
+            end)
+        end
+    end)
+end)
+-- sell Goldfish
+spawn(function()
+	while wait() do
+        if _G.sell_Gold then
+            for i,y in pairs(game.Workspace.world.npcs:GetChildren()) do
+                if string.find(y.Name,"Merchant") then
+                    y.HumanoidRootPart.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(4.5,0,0)
+                    workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild(y.Name):WaitForChild("merchant"):WaitForChild("sell"):InvokeServer()
+                end
+            end
+        end
+    end
+end)
+spawn(function()
+	while wait() do
+        if _G.Go then
+            game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = CFrame.new(-106.599251, -734.934753, 1216.42346, -0.995170832, 5.22401278e-09, 0.0981583148, 5.3456426e-09, 1, 9.76124404e-10, -0.0981583148, 1.49612978e-09, -0.995170832)
+        end
+    end
+end)
+spawn(function()
+    game:GetService("RunService").RenderStepped:Connect(function()
+        if _G.Tp_Even then
+            pcall(function()
+                Part()
+                if workspace.zones.fishing:FindFirstChild("The Depths - Serpent") then
+                    workspace:FindFirstChild("Tp_Evend").CFrame = game.Workspace.zones.fishing:FindFirstChild("The Depths - Serpent").CFrame * CFrame.new(0,0,14)
+                else
+                    workspace:FindFirstChild("Tp_Evend").CFrame = CFrame.new(872.113525, -740.642822, 1243.06262, 0.0225981735, -3.07806958e-09, 0.999744654, -3.43742386e-08, 1, 3.85584897e-09, -0.999744654, -3.44525972e-08, 0.0225981735)
+                end
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace:FindFirstChild("Tp_Evend").CFrame * CFrame.new(0,3.5,0)
+            end)
+        end
+    end)
+end)
+spawn(function()
+	while wait(600) do
+        pcall(function()
+            game:GetService('VirtualUser'):CaptureController()
+            game:GetService('VirtualUser'):Button1Down(Vector2.new(535, 286))
+        end)
+    end
+end)
+spawn(function()
+    local plyName = game.Players.LocalPlayer.Name
+    while _G.AutoSell do wait()
+        pcall(function()
+            for x,y in pairs(game.Workspace.world.npcs:GetChildren()) do
+                if string.find(y.Name,"Merchant") and _G.AutoSell then
+                    for i,v in pairs(game:GetService("Players").LocalPlayer.Backpack:GetChildren()) do
+                        if v.Name == "Depth Octopus" or v.Name == "Frilled Shark" or v.Name == "Luminescent Minnow" or v.Name == "Three-eyed Fish" or v.Name == "Black Dragon Fish" or v.Name == "Goblin Shark" or v.Name == "Spider Crab" or v.Name == "Small Spine Chimera" or v.Name == "Nautilus" or v.Name == "Ancient Eel" or v.Name == "Barreleye Fish" or v.Name == "Mutated Shark" or v.Name == "Sea Snake" and _G.AutoSell then
+                            if not v.link.Value:FindFirstChild("abyssalWeightBonus") then
+                                y.HumanoidRootPart.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(4.5,0,0)
+                                game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                                workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild(y.Name):WaitForChild("merchant"):WaitForChild("sell"):InvokeServer()
+                                elseif not v.link.Value:FindFirstChild("Sparkling") then
+                                y.HumanoidRootPart.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(4.5,0,0)
+                                game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                                workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild(y.Name):WaitForChild("merchant"):WaitForChild("sell"):InvokeServer()
+                                elseif not v.link.Value:FindFirstChild("Shiny") then
+                                y.HumanoidRootPart.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(4.5,0,0)
+                                game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                                workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild(y.Name):WaitForChild("merchant"):WaitForChild("sell"):InvokeServer()
+                                elseif not v.link.Value:FindFirstChild("Mutation").Value == "Hexed" then
+                                y.HumanoidRootPart.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(4.5,0,0)
+                                game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                                workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild(y.Name):WaitForChild("merchant"):WaitForChild("sell"):InvokeServer()
+                                elseif not v.link.Value:FindFirstChild("Mutation").Value == "Abyssal" then
+                                y.HumanoidRootPart.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(4.5,0,0)
+                                game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                                workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild(y.Name):WaitForChild("merchant"):WaitForChild("sell"):InvokeServer()
+                                elseif not v.link.Value:FindFirstChild("Mutation").Value == "Nuclear" then
+                                y.HumanoidRootPart.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(4.5,0,0)
+                                game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                                workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild(y.Name):WaitForChild("merchant"):WaitForChild("sell"):InvokeServer()
+                                elseif not v.link.Value:FindFirstChild("Mutation").Value == "Lunar" then
+                                y.HumanoidRootPart.CFrame =  game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame * CFrame.new(4.5,0,0)
+                                game.Players.LocalPlayer.Character.Humanoid:EquipTool(v)
+                                workspace:WaitForChild("world"):WaitForChild("npcs"):WaitForChild(y.Name):WaitForChild("merchant"):WaitForChild("sell"):InvokeServer()
+                            end
+                        end
+                    end
+                end
+            end
+        end)
+    end
+end)
