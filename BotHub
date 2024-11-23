@@ -296,11 +296,11 @@ spawn(function()
             pcall(function()
                 Part()
                 if workspace.zones.fishing:FindFirstChild("The Depths - Serpent") then
-                    workspace:FindFirstChild("Tp_Evend").CFrame = game.Workspace.zones.fishing:FindFirstChild("The Depths - Serpent").CFrame * CFrame.new(0,0,14)
+                    workspace:FindFirstChild("Tp_Even").CFrame = game.Workspace.zones.fishing:FindFirstChild("The Depths - Serpent").CFrame * CFrame.new(0,0,14)
                 else
-                    workspace:FindFirstChild("Tp_Evend").CFrame = CFrame.new(872.113525, -740.642822, 1243.06262, 0.0225981735, -3.07806958e-09, 0.999744654, -3.43742386e-08, 1, 3.85584897e-09, -0.999744654, -3.44525972e-08, 0.0225981735)
+                    workspace:FindFirstChild("Tp_Even").CFrame = CFrame.new(872.113525, -740.642822, 1243.06262, 0.0225981735, -3.07806958e-09, 0.999744654, -3.43742386e-08, 1, 3.85584897e-09, -0.999744654, -3.44525972e-08, 0.0225981735)
                 end
-                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace:FindFirstChild("Tp_Evend").CFrame * CFrame.new(0,3.5,0)
+                game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = workspace:FindFirstChild("Tp_Even").CFrame * CFrame.new(0,3.5,0)
             end)
         end
     end
